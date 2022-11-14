@@ -4,8 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+    environment:
+      - WATCHPACK_POLLING=true
     ports:
-      - "3001:3000"
+      - "3000:3000"
     volumes:
       - /app/node_modules
       - .:/app
@@ -13,6 +15,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
+    environment:
+      - WATCHPACK_POLLING=true
     volumes:
       - /app/node_modules
       - .:/app
